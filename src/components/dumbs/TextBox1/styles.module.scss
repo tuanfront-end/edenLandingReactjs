@@ -1,0 +1,34 @@
+.textBox1 {
+  @media (max-width: 991.98px) {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    text-align: center;
+    padding: 0 0;
+  }
+}
+
+.textBox1Center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  :global .landingSectionText {
+    margin-top: 0 !important;
+  }
+}
+
+.groupButtonForDownloadApp {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  @media (max-width: 991.98px) {
+    justify-content: center;
+  }
+  >a {
+    display: block;
+  }
+}

@@ -1,0 +1,74 @@
+.quote__module {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.quote__icon {
+  margin-top: 7px;
+  padding: 5px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #f06292 0%, #f9785f 100%);
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  margin-right: 20px;
+
+  @media (max-width: 1199.98px) {
+    height: 45px;
+    width: 45px;
+  }
+  @media (max-width: 575.98px) {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.quote__textWrapped{
+  display: block;
+}
+
+.quote__header {
+  margin-bottom: 15px;
+  display: flex;
+  @media (max-width: 1199.98px) {
+    flex-direction: column;
+  }
+}
+
+.quote__stars {
+  color: orange;
+  margin-right: 10px;
+  font-size: 12px;
+  flex-shrink: 0;
+  @media (max-width: 575.98px) {
+    font-size: 10px;
+  }
+}
+
+.quote__title {
+  margin: 0;
+  font-size: 18px;
+  color: rgba($color: #000, $alpha: .6);
+  span {
+    color: rgba($color: #000, $alpha: .9);
+    margin-right: 5px;
+  }
+  @media (max-width: 575.98px) {
+    font-size: 16px;
+  }
+}
+
+.quote__body {
+  margin-bottom: 15px;
+}
+
+.quote__author {
+  color: rgba($color: #000, $alpha: .6);
+  span {
+    color: rgba($color: #000, $alpha: .9);
+    text-transform: capitalize;
+  }
+}

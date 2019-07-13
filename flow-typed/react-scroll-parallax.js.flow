@@ -1,0 +1,4 @@
+// @flow
+declare module "react-scroll-parallax" {
+  declare module.exports: any;
+}

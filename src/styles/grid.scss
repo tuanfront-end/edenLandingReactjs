@@ -1,0 +1,93 @@
+:global {
+	// Settings
+	$grid: (
+		container: (
+			width: 1200,
+			gap: 10
+		),
+		columns: (
+			max: 12,
+			gap: 20
+		),
+		breakpoints: (
+			default: xs,
+			sm: 768,
+			md: 992,
+			lg: 1200
+		)
+	);
+
+	// Map deep get
+	@function map-deep-get($map, $keys...) {
+		@each $key in $keys {
+			$map: map-get($map, $key);
+		}
+
+		@return $map;
+	}
+
+	$containerWidth: map-deep-get($grid, 'container', 'width');
+	$containerGap: map-deep-get($grid, 'container', 'gap');
+	$colMax: map-deep-get($grid, 'columns', 'max');
+	$colGap: map-deep-get($grid, 'columns', 'gap');
+
+	.wil-container {
+		max-width: $containerWidth * 1px;
+		margin: auto;
+	}
+
+	.wil-container-fluid {
+		width: 100%;
+	}
+
+	.wil-container,
+	.wil-container-fluid {
+		padding-left: $containerGap * 1px;
+		padding-right: $containerGap * 1px;
+	}
+
+	.wil-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -($colGap / 2) * 1px;
+		margin-right: -($colGap / 2) * 1px;
+
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	[class*="wil-col-"] {
+		// float: left;
+		padding-left: ($colGap / 2) * 1px;
+		padding-right: ($colGap / 2) * 1px;
+	}
+
+	@mixin column($nameCol) {
+		@for $i from 1 through $colMax {
+			.wil-col-#{$nameCol}-#{$i} {
+				$flexBasis: (100 * $i) / $colMax * 1%;
+
+				flex: 0 0 $flexBasis;
+				max-width: $flexBasis;
+			}
+		}
+	}
+
+	@each $key,
+	$val in map-get($grid, 'breakpoints') {
+		@if ($key=='default') {
+			$colDefault: map-deep-get($grid, 'breakpoints', 'default');
+			@include column($colDefault);
+		}
+
+		@else {
+			@media (min-width: $val * 1px) {
+				@include column($key);
+			}
+		}
+	}
+
+}

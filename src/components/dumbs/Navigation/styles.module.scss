@@ -1,0 +1,105 @@
+.headerWrap {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 999;
+  transition: all .5s ease;
+  &.wilHeaderTop {
+    background-color: transparent !important;
+  }
+  @media (max-width: 1399.98px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+
+.logo {
+  display: block;
+  max-width: 140px;
+  max-height: 50px;
+  @media (max-width: 991.98px) {
+    max-width: 100px;
+  }
+}
+
+.navigation {
+  display: block;
+}
+
+.navigation_nav {
+  display: flex;
+  align-items: center;
+}
+
+.navigation_menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1399.98px) {
+    display: none;
+  }
+}
+
+.navigation_item {
+  >a {
+    margin: 0 20px;
+    padding: 25px 0;
+    font-weight: 500;
+    font-size: 15px;
+    color: #FFF;
+  }
+}
+
+.navigation_btnGroup {
+  display: flex;
+  align-items: center;
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+
+.navigation_btnItem {
+  margin: 0 5px;
+}
+
+.mobileMenu {
+  margin-left: 30px;
+  font-size: 22.5px;
+  display: none;
+  cursor: pointer;
+  @media (max-width: 1399.98px) {
+    display: block;
+  }
+}
+
+.mobileMenu__btn {
+  display: block;
+  color: rgba($color: #FFF, $alpha: .8);
+}
+
+.navForLaptop {
+  display: none;
+  @media (min-width: 768px) and (max-width: 1399.98px) {
+    display: block;
+  }
+}
+
+.navForMobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

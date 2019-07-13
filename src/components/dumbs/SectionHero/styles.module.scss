@@ -1,0 +1,95 @@
+.canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.sectionHero {
+  z-index: 1;
+  position: relative;
+  @media (min-width: 768px) {
+    padding-top: 50px;
+  }
+}
+
+.rowSection {
+  align-items: center;
+}
+
+.sectionHeroWeb__left {
+  padding-right: 20px;
+  @media (max-width: 991.98px) {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.sectionHeroWeb__text {
+  margin-top: 40px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.sectionHeroWeb__buttonGroup {
+  margin: 40px 0;
+}
+
+.videoWrap{
+  position: relative;
+}
+
+.video {
+  position: absolute;
+  top: 9%;
+  left: 12%;
+  bottom: 9%;
+  right: 12%;
+}
+
+.popupVideoIframeWrap{
+  position: fixed;
+  background-color: rgba($color: #000, $alpha: .5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupVideoIframe {
+  padding: 20px;
+  height: 70vh;
+  width: 60%;
+  background-color: #fff;
+  border-radius: 8px;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  @media (max-width: 1199.98px) {
+    width: 85%;
+    padding: 15px;
+  }
+  @media (max-width: 767.98px) {
+    width: 95%;
+    height: 40vh;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .beforeSection {
+    order: unset !important;
+    margin-bottom: 50px;
+  }
+  .afterSection {
+    order: unset !important;
+  }
+}

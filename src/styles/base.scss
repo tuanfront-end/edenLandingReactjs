@@ -1,0 +1,257 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Spartan MB", sans-serif;
+  line-height: 1.8em;
+  color: rgba($color: #000, $alpha: .7);
+  font-size: 14px;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.4em;
+  color: #252c41;
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+#root {
+  overflow: hidden;
+}
+
+
+// ------------------------------------------------------------------
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.absolute--fill {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.tc {
+  text-align: center;
+}
+
+// ------------------------------------------------------------------
+.divider {
+  width: 64px;
+  background-color: #fff;
+  height: 3px;
+  display: block;
+
+  @media (min-width: 306px) and (max-width: 991.98px) {
+    margin: 0 auto;
+  }
+}
+
+.divider-color {
+  background-color: #f06292;
+}
+
+.divider--style2 {
+  width: 40px;
+  height: 2px;
+  background-color: rgba($color: #000, $alpha: .4);
+}
+
+// ------------------------------------------------------------------
+.wil-section {
+  position: relative;
+  z-index: 9;
+  padding: 110px 0;
+  overflow: hidden;
+  transition: all .5s ease;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &.wil-section--noHidden {
+    overflow: inherit;
+  }
+
+  @media (min-width: 300px) and (max-width: 767.98px) {
+    padding: 70px 0;
+  }
+}
+
+.wil-section--gradient {
+  background-image: linear-gradient(90deg, #f06292 0%, #f9785f 100%);
+}
+
+// --------------------------------------
+.items-center {
+  align-items: center;
+}
+
+
+// ----------------------------------------------
+.landingSectionTitle {
+  font-size: 42px;
+  color: #fff;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+
+  &.landingSectionTitle--black {
+    color: rgba($color: #000, $alpha: .8);
+  }
+
+  @media (max-width: 1199.98px) {
+    font-size: 34px;
+    line-height: 1.4em;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 28px;
+  }
+}
+
+.landingSectionText {
+  margin-top: 45px;
+  color: #fff;
+  >p {
+    margin: 0;
+  }
+
+  &.landingSectionText--black {
+    color: rgba($color: #000, $alpha: .7);
+  }
+
+  &.landingSectionText--style2 {
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+}
+
+
+// ---------------------------http://tachyons.io/------------------------
+.top-0 {
+  top: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.left-0 {
+  left: 0
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.cover {
+  background-size: cover !important;
+}
+
+.bg-center {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bg-light-gray {
+  background-color: rgb(207, 205, 205);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.aspect-ratio {
+  height: 0;
+  position: relative;
+}
+
+.aspect-ratio--16x9 {
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio--9x16 {
+  padding-bottom: 177.77%;
+}
+
+.aspect-ratio--4x3 {
+  padding-bottom: 75%;
+}
+
+.aspect-ratio--3x4 {
+  padding-bottom: 133.33%;
+}
+
+.aspect-ratio--6x4 {
+  padding-bottom: 66.6%;
+}
+
+.aspect-ratio--4x6 {
+  padding-bottom: 150%;
+}
+
+.aspect-ratio--8x5 {
+  padding-bottom: 62.5%;
+}
+
+.aspect-ratio--5x8 {
+  padding-bottom: 160%;
+}
+
+.aspect-ratio--7x5 {
+  padding-bottom: 71.42%;
+}
+
+.aspect-ratio--5x7 {
+  padding-bottom: 140%;
+}
+
+.aspect-ratio--1x1 {
+  padding-bottom: 100%;
+}
+
+.aspect-ratio--object {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image screenshot 1`] = `
+<div
+  className="wil-image relative cover bg-center overflow-hidden "
+>
+  <div
+    className="absolute top-0 right-0 bottom-0 left-0"
+    style={
+      Object {
+        "backgroundImage": "url(\\"https://placeimg.com/400/300/any\\")",
+        "zIndex": -1,
+      }
+    }
+  />
+  <img
+    alt=""
+    src="https://placeimg.com/400/300/any"
+    style={
+      Object {
+        "opacity": "0",
+        "transition": "opacity 400ms linear",
+        "willChange": "opacity",
+      }
+    }
+  />
+</div>
+`;

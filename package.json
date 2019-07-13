@@ -1,0 +1,88 @@
+{
+  "name": "wilcity_landing_reactjs",
+  "version": "1.0.0",
+  "homepage": "https://landing.wilcity.com",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "flow-stop": "flow stop",
+    "lint": "eslint src",
+    "test:nowatch": "cross-env CI=true react-scripts test --env=jsdom",
+    "test-all": "yarn lint && yarn flow && yarn test:nowatch && yarn build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
+    "release": "func() { yarn test-all && zip -r ${npm_package_name}-build.zip build && release-it \"$1\" && rm ${npm_package_name}-build.zip; }; func"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint src",
+      "git add"
+    ],
+    "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
+      "prettier --ignore-path .eslintignore --parser json --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --ignore-path .eslintignore --syntax scss --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && flow check && npm run test:nowatch"
+    }
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.19.0",
+    "node-sass": "^4.12.0",
+    "ramda": "^0.26.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-paginate": "^6.3.0",
+    "react-redux": "^7.0.2",
+    "react-scripts": "2.1.8",
+    "react-slick": "^0.23.2",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "caniuse-lite": "^1.0.30000975",
+    "cross-env": "^5.2.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-flowtype": "^3.6.1",
+    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.98.1",
+    "gh-pages": "^2.0.1",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "react-test-renderer": "^16.8.6",
+    "redux-logger": "^3.0.6",
+    "release-it": "^12.2.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "yarn": "^1.16.0"
+  }
+}
